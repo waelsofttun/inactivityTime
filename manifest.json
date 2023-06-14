@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Calcul d'inactivité des agents",
+    "version": "1.0",
+    "description": "Extension pour calculer l'inactivité des agents",
+    "permissions": [
+      "idle",
+      "activeTab"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+      "default_icon": {
+        "16": "1.png",
+        "32": "2.png"
+      },
+      "default_title": "Calcul d'inactivité"
+    },
+    "icons": {
+      "16": "1.png",
+      "32": "2.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+        }],
+        "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net"
+
+   
+  }
+  
